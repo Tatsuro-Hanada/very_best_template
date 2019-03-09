@@ -84,7 +84,7 @@
     </label>
 
     <!-- Input for genre_id start -->
-    <input type="text" id="genre_id" name="genre_id" class="form-control" value="<%= @event.genre_id %>">
+    <%= select_tag(:genre_id, options_from_collection_for_select(Genre.all, :id, :name, @event.genre_id), :class => "form-control") %>
     <!-- Input for genre_id end -->
   </div>
   <!-- Label and input for genre_id end -->
