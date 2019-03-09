@@ -1,6 +1,8 @@
 class Event < ApplicationRecord
   # Direct associations
 
+  belongs_to :genre
+
   has_many   :reviews,
              :dependent => :destroy
 
