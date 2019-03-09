@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Interest #<%= @interest.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/interests" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link interest start -->
+      <div class="col">
+        <a href="/interests/<%= @interest.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit interest
+        </a>
+      </div>
+      <!-- Edit link interest end -->
+
+      <!-- Delete link interest start -->
+      <div class="col">
+        <a href="/delete_interest/<%= @interest.id %>" class="btn btn-block btn-outline-secondary">
+          Delete interest
+        </a>
+      </div>
+      <!-- Delete link interest end -->
+    </div>
+
+    <dl>
+      <dt>
+        Member
+      </dt>
+      <!-- Display member_id start -->
+      <dd>
+        <%= @interest.member_id %>
+      </dd>
+      <!-- Display member_id end -->
+
+      <dt>
+        Event
+      </dt>
+      <!-- Display event_id start -->
+      <dd>
+        <%= @interest.event_id %>
+      </dd>
+      <!-- Display event_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@interest.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@interest.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

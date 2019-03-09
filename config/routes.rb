@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Interest resource:
+
+  # CREATE
+  get("/interests/new", { :controller => "interests", :action => "new_form" })
+  post("/create_interest", { :controller => "interests", :action => "create_row" })
+
+  # READ
+  get("/interests", { :controller => "interests", :action => "index" })
+  get("/interests/:id_to_display", { :controller => "interests", :action => "show" })
+
+  # UPDATE
+  get("/interests/:prefill_with_id/edit", { :controller => "interests", :action => "edit_form" })
+  post("/update_interest/:id_to_modify", { :controller => "interests", :action => "update_row" })
+
+  # DELETE
+  get("/delete_interest/:id_to_remove", { :controller => "interests", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Event resource:
 
   # CREATE
