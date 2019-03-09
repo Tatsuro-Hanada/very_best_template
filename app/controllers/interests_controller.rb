@@ -53,6 +53,22 @@ class InterestsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @interest = Interest.find(params.fetch("id_to_remove"))
+
+    @interest.destroy
+
+    redirect_to("/members/#{@interest.member_id}", notice: "Interest deleted successfully.")
+  end
+
+  def destroy_row_from_event
+    @interest = Interest.find(params.fetch("id_to_remove"))
+
+    @interest.destroy
+
+    redirect_to("/events/#{@interest.event_id}", notice: "Interest deleted successfully.")
+  end
+
   def destroy_row
     @interest = Interest.find(params.fetch("id_to_remove"))
 

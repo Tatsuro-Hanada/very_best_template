@@ -53,6 +53,22 @@ class AttendancesController < ApplicationController
     end
   end
 
+  def destroy_row_from_member
+    @attendance = Attendance.find(params.fetch("id_to_remove"))
+
+    @attendance.destroy
+
+    redirect_to("/members/#{@attendance.member_id}", notice: "Attendance deleted successfully.")
+  end
+
+  def destroy_row_from_event
+    @attendance = Attendance.find(params.fetch("id_to_remove"))
+
+    @attendance.destroy
+
+    redirect_to("/events/#{@attendance.event_id}", notice: "Attendance deleted successfully.")
+  end
+
   def destroy_row
     @attendance = Attendance.find(params.fetch("id_to_remove"))
 
