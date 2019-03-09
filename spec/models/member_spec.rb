@@ -16,6 +16,8 @@ RSpec.describe Member, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:attending_events) }
+
     end
 
     describe "Validations" do

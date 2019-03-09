@@ -15,6 +15,10 @@ class Member < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :attending_events,
+             :through => :attendances,
+             :source => :event
+
   # Validations
 
   # Include default devise modules. Others available are:
