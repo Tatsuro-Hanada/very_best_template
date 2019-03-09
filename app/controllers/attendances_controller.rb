@@ -10,7 +10,7 @@ class AttendancesController < ApplicationController
   end
 
   def index
-    @attendances = Attendance.all
+    @attendances = current_member.attendances.page(params[:page]).per(10)
 
     render("attendance_templates/index.html.erb")
   end
