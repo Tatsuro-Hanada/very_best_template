@@ -4,6 +4,8 @@ RSpec.describe Event, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:interests) }
+
     it { should belong_to(:user) }
 
     end
