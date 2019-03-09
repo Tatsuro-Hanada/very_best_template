@@ -56,7 +56,7 @@ class InterestsController < ApplicationController
   def update_row
     @interest = Interest.find(params.fetch("id_to_modify"))
 
-    @interest.member_id = params.fetch("member_id")
+    
     @interest.event_id = params.fetch("event_id")
 
     if @interest.valid?
