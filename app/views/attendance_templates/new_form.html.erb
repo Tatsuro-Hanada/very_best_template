@@ -10,15 +10,9 @@
 <!-- Form attendance end -->
 
   <!-- Label and input for member_id start -->
-  <div class="form-group">
-    <label for="member_id">
-      Member
-    </label>
-
-    <!-- Input for member_id start -->
-    <%= select_tag(:member_id, options_from_collection_for_select(Member.all, :id, :email, @attendance.member_id), :class => "form-control") %>
-    <!-- Input for member_id end -->
-  </div>
+  <!-- Input for "member_id" start -->
+  <input type="hidden" name="member_id" value="<%= current_member.id %>">
+  <!-- Input for "member_id" end -->
   <!-- Label and input for member_id end -->
 
   <!-- Label and input for event_id start -->

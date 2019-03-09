@@ -56,7 +56,7 @@ class AttendancesController < ApplicationController
   def update_row
     @attendance = Attendance.find(params.fetch("id_to_modify"))
 
-    @attendance.member_id = params.fetch("member_id")
+    
     @attendance.event_id = params.fetch("event_id")
 
     if @attendance.valid?
