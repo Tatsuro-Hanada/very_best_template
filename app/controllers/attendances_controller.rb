@@ -10,7 +10,8 @@ class AttendancesController < ApplicationController
   end
 
   def index
-    @attendances = current_member.attendances.page(params[:page]).per(10)
+    @q = current_member.attendances.ransack(params[:q])
+    @attendances = @q.result(:distinct => true).includes(:member, :event).page(params[:page]).per(10)
 
     render("attendance_templates/index.html.erb")
   end

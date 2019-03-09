@@ -10,7 +10,8 @@ class InterestsController < ApplicationController
   end
 
   def index
-    @interests = current_member.interests.page(params[:page]).per(10)
+    @q = current_member.interests.ransack(params[:q])
+    @interests = @q.result(:distinct => true).includes(:user, :event).page(params[:page]).per(10)
 
     render("interest_templates/index.html.erb")
   end

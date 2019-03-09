@@ -10,7 +10,8 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.page(params[:page]).per(10)
+    @q = Event.ransack(params[:q])
+    @events = @q.result(:distinct => true).includes(:user, :interests, :attendances, :reviews, :genre, :participants, :fans).page(params[:page]).per(10)
 
     render("event_templates/index.html.erb")
   end
