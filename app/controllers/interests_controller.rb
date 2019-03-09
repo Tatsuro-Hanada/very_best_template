@@ -10,7 +10,7 @@ class InterestsController < ApplicationController
   end
 
   def index
-    @interests = Interest.all
+    @interests = current_member.interests.page(params[:page]).per(10)
 
     render("interest_templates/index.html.erb")
   end
