@@ -4,6 +4,8 @@ RSpec.describe Event, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:reviews) }
+
     it { should have_many(:attendances) }
 
     it { should have_many(:interests) }
