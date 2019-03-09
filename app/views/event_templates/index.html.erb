@@ -98,13 +98,21 @@
 
         <!-- Display event.member_id start -->
         <td>
-          <%= event.user.email %>
+          <% if event.user.present? %>
+            <a href="/members/<%= event.user.id %>">
+              <%= event.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display event.member_id end -->
 
         <!-- Display event.genre_id start -->
         <td>
-          <%= event.genre.name %>
+          <% if event.genre.present? %>
+            <a href="/genres/<%= event.genre.id %>">
+              <%= event.genre.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display event.genre_id end -->
 

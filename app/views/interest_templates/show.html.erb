@@ -38,7 +38,11 @@
       </dt>
       <!-- Display member_id start -->
       <dd>
-        <%= @interest.member_id %>
+        <% if @interest.user.present? %>
+          <a href="/members/<%= @interest.member_id %>">
+            <%= @interest.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display member_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display event_id start -->
       <dd>
-        <%= @interest.event_id %>
+        <% if @interest.event.present? %>
+          <a href="/events/<%= @interest.event_id %>">
+            <%= @interest.event.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display event_id end -->
 

@@ -74,7 +74,11 @@
       </dt>
       <!-- Display member_id start -->
       <dd>
-        <%= @event.member_id %>
+        <% if @event.user.present? %>
+          <a href="/members/<%= @event.member_id %>">
+            <%= @event.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display member_id end -->
 
@@ -83,7 +87,11 @@
       </dt>
       <!-- Display genre_id start -->
       <dd>
-        <%= @event.genre_id %>
+        <% if @event.genre.present? %>
+          <a href="/genres/<%= @event.genre_id %>">
+            <%= @event.genre.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display genre_id end -->
 

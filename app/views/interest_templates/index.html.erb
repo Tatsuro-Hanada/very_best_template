@@ -58,13 +58,21 @@
 
         <!-- Display interest.member_id start -->
         <td>
-          <%= interest.user.email %>
+          <% if interest.user.present? %>
+            <a href="/members/<%= interest.user.id %>">
+              <%= interest.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display interest.member_id end -->
 
         <!-- Display interest.event_id start -->
         <td>
-          <%= interest.event.name %>
+          <% if interest.event.present? %>
+            <a href="/events/<%= interest.event.id %>">
+              <%= interest.event.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display interest.event_id end -->
 

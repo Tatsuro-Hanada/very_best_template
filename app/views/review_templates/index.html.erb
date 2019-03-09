@@ -72,13 +72,21 @@
 
         <!-- Display review.member_id start -->
         <td>
-          <%= review.member.email %>
+          <% if review.member.present? %>
+            <a href="/members/<%= review.member.id %>">
+              <%= review.member.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display review.member_id end -->
 
         <!-- Display review.event_id start -->
         <td>
-          <%= review.event.name %>
+          <% if review.event.present? %>
+            <a href="/events/<%= review.event.id %>">
+              <%= review.event.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display review.event_id end -->
 
