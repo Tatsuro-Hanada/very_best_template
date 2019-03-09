@@ -15,6 +15,10 @@ class Member < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :interested_events,
+             :through => :interests,
+             :source => :event
+
   has_many   :attending_events,
              :through => :attendances,
              :source => :event
