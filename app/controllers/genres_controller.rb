@@ -6,6 +6,7 @@ class GenresController < ApplicationController
   end
 
   def show
+    @event = Event.new
     @genre = Genre.find(params.fetch("id_to_display"))
 
     render("genre_templates/show.html.erb")

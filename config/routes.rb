@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/reviews/new", { :controller => "reviews", :action => "new_form" })
   post("/create_review", { :controller => "reviews", :action => "create_row" })
+  post("/create_review_from_event", { :controller => "reviews", :action => "create_row_from_event" })
 
   # READ
   get("/reviews", { :controller => "reviews", :action => "index" })
@@ -47,6 +48,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/attendances/new", { :controller => "attendances", :action => "new_form" })
   post("/create_attendance", { :controller => "attendances", :action => "create_row" })
+  post("/create_attendance_from_event", { :controller => "attendances", :action => "create_row_from_event" })
 
   # READ
   get("/attendances", { :controller => "attendances", :action => "index" })
@@ -68,6 +70,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/interests/new", { :controller => "interests", :action => "new_form" })
   post("/create_interest", { :controller => "interests", :action => "create_row" })
+  post("/create_interest_from_event", { :controller => "interests", :action => "create_row_from_event" })
 
   # READ
   get("/interests", { :controller => "interests", :action => "index" })
@@ -89,6 +92,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/events/new", { :controller => "events", :action => "new_form" })
   post("/create_event", { :controller => "events", :action => "create_row" })
+  post("/create_event_from_genre", { :controller => "events", :action => "create_row_from_genre" })
 
   # READ
   get("/events", { :controller => "events", :action => "index" })

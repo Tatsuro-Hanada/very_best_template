@@ -32,6 +32,21 @@ class InterestsController < ApplicationController
     end
   end
 
+  def create_row_from_event
+    @interest = Interest.new
+
+    @interest.member_id = params.fetch("member_id")
+    @interest.event_id = params.fetch("event_id")
+
+    if @interest.valid?
+      @interest.save
+
+      redirect_to("/events/#{@interest.event_id}", notice: "Interest created successfully.")
+    else
+      render("interest_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @interest = Interest.find(params.fetch("prefill_with_id"))
 

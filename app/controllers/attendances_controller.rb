@@ -32,6 +32,21 @@ class AttendancesController < ApplicationController
     end
   end
 
+  def create_row_from_event
+    @attendance = Attendance.new
+
+    @attendance.member_id = params.fetch("member_id")
+    @attendance.event_id = params.fetch("event_id")
+
+    if @attendance.valid?
+      @attendance.save
+
+      redirect_to("/events/#{@attendance.event_id}", notice: "Attendance created successfully.")
+    else
+      render("attendance_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @attendance = Attendance.find(params.fetch("prefill_with_id"))
 

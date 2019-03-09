@@ -1,0 +1,73 @@
+<!-- Form event start -->
+<form action="/create_event_from_genre" method="post">
+<!-- Form event end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @event.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for date start -->
+  <div class="form-group">
+    <label for="date">
+      Date
+    </label>
+
+    <!-- Input for date start -->
+    <input type="text" id="date" name="date" class="form-control" value="<%= @event.date %>">
+    <!-- Input for date end -->
+  </div>
+  <!-- Label and input for date end -->
+
+  <!-- Label and input for venue start -->
+  <div class="form-group">
+    <label for="venue">
+      Venue
+    </label>
+
+    <!-- Input for venue start -->
+    <input type="text" id="venue" name="venue" class="form-control" value="<%= @event.venue %>">
+    <!-- Input for venue end -->
+  </div>
+  <!-- Label and input for venue end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <!-- Input for description start -->
+    <input type="text" id="description" name="description" class="form-control" value="<%= @event.description %>">
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <!-- Label and input for member_id start -->
+  <div class="form-group">
+    <label for="member_id">
+      Member
+    </label>
+
+    <!-- Input for member_id start -->
+    <input type="text" id="member_id" name="member_id" class="form-control" value="<%= @event.member_id %>">
+    <!-- Input for member_id end -->
+  </div>
+  <!-- Label and input for member_id end -->
+
+  <!-- Label and input for genre_id start -->
+  <!-- Input for genre_id start -->
+  <input type="hidden" name="genre_id" value="<%= @genre.id %>">
+  <!-- Input for genre_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create event
+  </button>
+</form>

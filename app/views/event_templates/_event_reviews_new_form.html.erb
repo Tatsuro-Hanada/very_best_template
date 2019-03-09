@@ -1,0 +1,49 @@
+<!-- Form review start -->
+<form action="/create_review_from_event" method="post">
+<!-- Form review end -->
+
+  <!-- Label and input for body start -->
+  <div class="form-group">
+    <label for="body">
+      Body
+    </label>
+
+    <!-- Input for body start -->
+    <input type="text" id="body" name="body" class="form-control" value="<%= @review.body %>">
+    <!-- Input for body end -->
+  </div>
+  <!-- Label and input for body end -->
+
+  <!-- Label and input for member_id start -->
+  <div class="form-group">
+    <label for="member_id">
+      Member
+    </label>
+
+    <!-- Input for member_id start -->
+    <input type="text" id="member_id" name="member_id" class="form-control" value="<%= @review.member_id %>">
+    <!-- Input for member_id end -->
+  </div>
+  <!-- Label and input for member_id end -->
+
+  <!-- Label and input for event_id start -->
+  <!-- Input for event_id start -->
+  <input type="hidden" name="event_id" value="<%= @event.id %>">
+  <!-- Input for event_id end -->
+
+  <!-- Label and input for rating start -->
+  <div class="form-group">
+    <label for="rating">
+      Rating
+    </label>
+
+    <!-- Input for rating start -->
+    <input type="text" id="rating" name="rating" class="form-control" value="<%= @review.rating %>">
+    <!-- Input for rating end -->
+  </div>
+  <!-- Label and input for rating end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create review
+  </button>
+</form>
