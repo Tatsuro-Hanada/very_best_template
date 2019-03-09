@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Attendance resource:
+
+  # CREATE
+  get("/attendances/new", { :controller => "attendances", :action => "new_form" })
+  post("/create_attendance", { :controller => "attendances", :action => "create_row" })
+
+  # READ
+  get("/attendances", { :controller => "attendances", :action => "index" })
+  get("/attendances/:id_to_display", { :controller => "attendances", :action => "show" })
+
+  # UPDATE
+  get("/attendances/:prefill_with_id/edit", { :controller => "attendances", :action => "edit_form" })
+  post("/update_attendance/:id_to_modify", { :controller => "attendances", :action => "update_row" })
+
+  # DELETE
+  get("/delete_attendance/:id_to_remove", { :controller => "attendances", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Interest resource:
 
   # CREATE

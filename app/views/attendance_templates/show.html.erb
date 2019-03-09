@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Attendance #<%= @attendance.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/attendances" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link attendance start -->
+      <div class="col">
+        <a href="/attendances/<%= @attendance.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit attendance
+        </a>
+      </div>
+      <!-- Edit link attendance end -->
+
+      <!-- Delete link attendance start -->
+      <div class="col">
+        <a href="/delete_attendance/<%= @attendance.id %>" class="btn btn-block btn-outline-secondary">
+          Delete attendance
+        </a>
+      </div>
+      <!-- Delete link attendance end -->
+    </div>
+
+    <dl>
+      <dt>
+        Member
+      </dt>
+      <!-- Display member_id start -->
+      <dd>
+        <%= @attendance.member_id %>
+      </dd>
+      <!-- Display member_id end -->
+
+      <dt>
+        Event
+      </dt>
+      <!-- Display event_id start -->
+      <dd>
+        <%= @attendance.event_id %>
+      </dd>
+      <!-- Display event_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@attendance.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@attendance.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
