@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
   def index
-    @members = Member.all
+    @members = Member.page(params[:page]).per(10)
 
     render("member_templates/index.html.erb")
   end
