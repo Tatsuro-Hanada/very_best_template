@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Genre resource:
+
+  # CREATE
+  get("/genres/new", { :controller => "genres", :action => "new_form" })
+  post("/create_genre", { :controller => "genres", :action => "create_row" })
+
+  # READ
+  get("/genres", { :controller => "genres", :action => "index" })
+  get("/genres/:id_to_display", { :controller => "genres", :action => "show" })
+
+  # UPDATE
+  get("/genres/:prefill_with_id/edit", { :controller => "genres", :action => "edit_form" })
+  post("/update_genre/:id_to_modify", { :controller => "genres", :action => "update_row" })
+
+  # DELETE
+  get("/delete_genre/:id_to_remove", { :controller => "genres", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Attendance resource:
 
   # CREATE
