@@ -1,0 +1,77 @@
+<!-- Validation failure messages -->
+<% if @review.errors.any? %>
+  <% @review.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit review #<%= @review.id %>
+</h1>
+
+<hr>
+
+<!-- Form review start -->
+<form action="/update_review/<%= @review.id %>" method="post">
+<!-- Form review end -->
+
+  <!-- Label and input for body start -->
+  <div class="form-group">
+    <label for="body">
+      Body
+    </label>
+
+    <!-- Input for body start -->
+    <input type="text" id="body" name="body" class="form-control" value="<%= @review.body %>">
+    <!-- Input for body end -->
+  </div>
+  <!-- Label and input for body end -->
+
+  <!-- Label and input for member_id start -->
+  <div class="form-group">
+    <label for="member_id">
+      Member
+    </label>
+
+    <!-- Input for member_id start -->
+    <input type="text" id="member_id" name="member_id" class="form-control" value="<%= @review.member_id %>">
+    <!-- Input for member_id end -->
+  </div>
+  <!-- Label and input for member_id end -->
+
+  <!-- Label and input for event_id start -->
+  <div class="form-group">
+    <label for="event_id">
+      Event
+    </label>
+
+    <!-- Input for event_id start -->
+    <input type="text" id="event_id" name="event_id" class="form-control" value="<%= @review.event_id %>">
+    <!-- Input for event_id end -->
+  </div>
+  <!-- Label and input for event_id end -->
+
+  <!-- Label and input for rating start -->
+  <div class="form-group">
+    <label for="rating">
+      Rating
+    </label>
+
+    <!-- Input for rating start -->
+    <input type="text" id="rating" name="rating" class="form-control" value="<%= @review.rating %>">
+    <!-- Input for rating end -->
+  </div>
+  <!-- Label and input for rating end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update review
+  </button>
+</form>
+
+<hr>
+
+<a href="/reviews">
+  Go back
+</a>
