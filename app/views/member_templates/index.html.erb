@@ -1,0 +1,112 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All members
+    </h1>
+
+    <a href="/members/new" class="btn btn-block btn-outline-secondary">
+      Add a new member
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Email
+        </th>
+
+        <th>
+          Password
+        </th>
+
+        <th>
+          Username
+        </th>
+
+        <th>
+          Cochair flag
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @members.each do |member| %>
+      <tr>
+        <!-- Display member.id start -->
+        <td>
+          <%= member.id %>
+        </td>
+        <!-- Display member.id end -->
+
+        <!-- Display member.email start -->
+        <td>
+          <%= member.email %>
+        </td>
+        <!-- Display member.email end -->
+
+        <!-- Display member.password start -->
+        <td>
+          <%= member.password %>
+        </td>
+        <!-- Display member.password end -->
+
+        <!-- Display member.username start -->
+        <td>
+          <%= member.username %>
+        </td>
+        <!-- Display member.username end -->
+
+        <!-- Display member.cochair_flag start -->
+        <td>
+          <%= member.cochair_flag %>
+        </td>
+        <!-- Display member.cochair_flag end -->
+
+        <!-- Display member.created_at start -->
+        <td>
+          <%= time_ago_in_words(member.created_at) %> ago
+        </td>
+        <!-- Display member.created_at end -->
+
+        <!-- Display member.updated_at start -->
+        <td>
+          <%= time_ago_in_words(member.updated_at) %> ago
+        </td>
+        <!-- Display member.updated_at end -->
+
+        <td>
+          <a href="/members/<%= member.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
