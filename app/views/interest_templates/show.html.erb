@@ -13,17 +13,21 @@
 
       <!-- Edit link interest start -->
       <div class="col">
-        <a href="/interests/<%= @interest.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit interest
-        </a>
+        <% if current_member == @interest.user %>
+          <a href="/interests/<%= @interest.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit interest
+          </a>
+        <% end %>
       </div>
       <!-- Edit link interest end -->
 
       <!-- Delete link interest start -->
       <div class="col">
-        <a href="/delete_interest/<%= @interest.id %>" class="btn btn-block btn-outline-secondary">
-          Delete interest
-        </a>
+        <% if current_member == @interest.user %>
+          <a href="/delete_interest/<%= @interest.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete interest
+          </a>
+        <% end %>
       </div>
       <!-- Delete link interest end -->
     </div>
