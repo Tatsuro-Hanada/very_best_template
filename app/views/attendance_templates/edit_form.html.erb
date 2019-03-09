@@ -15,7 +15,7 @@
     </label>
 
     <!-- Input for member_id start -->
-    <input type="text" id="member_id" name="member_id" class="form-control" value="<%= @attendance.member_id %>">
+    <%= select_tag(:member_id, options_from_collection_for_select(Member.all, :id, :email, @attendance.member_id), :class => "form-control") %>
     <!-- Input for member_id end -->
   </div>
   <!-- Label and input for member_id end -->
