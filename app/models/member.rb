@@ -1,6 +1,9 @@
 class Member < ApplicationRecord
   # Direct associations
 
+  has_many   :attendances,
+             :dependent => :destroy
+
   has_many   :interests,
              :dependent => :destroy
 
