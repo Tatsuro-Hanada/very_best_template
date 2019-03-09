@@ -71,7 +71,7 @@ class EventsController < ApplicationController
     @event.date = params.fetch("date")
     @event.venue = params.fetch("venue")
     @event.description = params.fetch("description")
-    @event.member_id = params.fetch("member_id")
+    
     @event.genre_id = params.fetch("genre_id")
 
     if @event.valid?
