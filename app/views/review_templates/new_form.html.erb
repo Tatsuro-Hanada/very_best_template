@@ -5,51 +5,33 @@
 
 <hr>
 
-<!-- Form review start -->
 <form action="/create_review" method="post">
-<!-- Form review end -->
 
-  <!-- Label and input for body start -->
   <div class="form-group">
     <label for="body">
       Body
     </label>
 
-    <!-- Input for body start -->
     <input type="text" id="body" name="body" class="form-control">
-    <!-- Input for body end -->
   </div>
-  <!-- Label and input for body end -->
 
-  <!-- Label and input for member_id start -->
-  <!-- Input for "member_id" start -->
   <input type="hidden" name="member_id" value="<%= current_member.id %>">
-  <!-- Input for "member_id" end -->
-  <!-- Label and input for member_id end -->
 
-  <!-- Label and input for event_id start -->
   <div class="form-group">
     <label for="event_id">
       Event
     </label>
 
-    <!-- Input for event_id start -->
     <%= select_tag(:event_id, options_from_collection_for_select(Event.all, :id, :name, @review.event_id), :class => "form-control") %>
-    <!-- Input for event_id end -->
   </div>
-  <!-- Label and input for event_id end -->
 
-  <!-- Label and input for rating start -->
   <div class="form-group">
     <label for="rating">
       Rating
     </label>
 
-    <!-- Input for rating start -->
     <input type="text" id="rating" name="rating" class="form-control">
-    <!-- Input for rating end -->
   </div>
-  <!-- Label and input for rating end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create review

@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @attendance.errors.any? %>
   <% @attendance.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,24 +12,16 @@
 
 <hr>
 
-<!-- Form attendance start -->
 <form action="/update_attendance/<%= @attendance.id %>" method="post">
-<!-- Form attendance end -->
 
-  <!-- Label and input for member_id start -->
-  <!-- Label and input for member_id end -->
 
-  <!-- Label and input for event_id start -->
   <div class="form-group">
     <label for="event_id">
       Event
     </label>
 
-    <!-- Input for event_id start -->
     <%= select_tag(:event_id, options_from_collection_for_select(Event.all, :id, :name, @attendance.event_id), :class => "form-control") %>
-    <!-- Input for event_id end -->
   </div>
-  <!-- Label and input for event_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update attendance

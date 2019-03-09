@@ -4,24 +4,16 @@
 
 <hr>
 
-<!-- Form interest start -->
 <form action="/update_interest/<%= @interest.id %>" method="post">
-<!-- Form interest end -->
 
-  <!-- Label and input for member_id start -->
-  <!-- Label and input for member_id end -->
 
-  <!-- Label and input for event_id start -->
   <div class="form-group">
     <label for="event_id">
       Event
     </label>
 
-    <!-- Input for event_id start -->
     <%= select_tag(:event_id, options_from_collection_for_select(Event.all, :id, :name, @interest.event_id), :class => "form-control") %>
-    <!-- Input for event_id end -->
   </div>
-  <!-- Label and input for event_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update interest

@@ -11,13 +11,11 @@
         </a>
       </div>
 
-      <!-- Edit link member start -->
       <div class="col">
         <a href="/members/<%= @member.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit member
         </a>
       </div>
-      <!-- Edit link member end -->
 
     </div>
 
@@ -25,61 +23,48 @@
       <dt>
         Email
       </dt>
-      <!-- Display email start -->
       <dd>
         <%= @member.email %>
       </dd>
-      <!-- Display email end -->
 
       <dt>
         Password
       </dt>
-      <!-- Display password start -->
       <dd>
         <%= @member.password %>
       </dd>
-      <!-- Display password end -->
 
       <dt>
         Username
       </dt>
-      <!-- Display username start -->
       <dd>
         <%= @member.username %>
       </dd>
-      <!-- Display username end -->
 
       <dt>
         Cochair flag
       </dt>
-      <!-- Display cochair_flag start -->
       <dd>
         <%= @member.cochair_flag %>
       </dd>
-      <!-- Display cochair_flag end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@member.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@member.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "member_templates/member_events" %>
@@ -115,4 +100,3 @@
     <%= render partial: "member_templates/member_interested_events" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

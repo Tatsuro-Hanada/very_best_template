@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link event start -->
       <div class="col">
         <% if current_member == @event.user %>
           <a href="/events/<%= @event.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link event end -->
 
-      <!-- Delete link event start -->
       <div class="col">
         <% if current_member == @event.user %>
           <a href="/delete_event/<%= @event.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,50 +26,40 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link event end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @event.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Date
       </dt>
-      <!-- Display date start -->
       <dd>
         <%= @event.date %>
       </dd>
-      <!-- Display date end -->
 
       <dt>
         Venue
       </dt>
-      <!-- Display venue start -->
       <dd>
         <%= @event.venue %>
       </dd>
-      <!-- Display venue end -->
 
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @event.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Member
       </dt>
-      <!-- Display member_id start -->
       <dd>
         <% if @event.user.present? %>
           <a href="/members/<%= @event.member_id %>">
@@ -80,12 +67,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display member_id end -->
 
       <dt>
         Genre
       </dt>
-      <!-- Display genre_id start -->
       <dd>
         <% if @event.genre.present? %>
           <a href="/genres/<%= @event.genre_id %>">
@@ -93,30 +78,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display genre_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@event.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@event.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "event_templates/event_interests" %>
@@ -146,4 +125,3 @@
     <%= render partial: "event_templates/event_fans" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

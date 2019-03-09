@@ -4,72 +4,48 @@
 
 <hr>
 
-<!-- Form event start -->
 <form action="/update_event/<%= @event.id %>" method="post">
-<!-- Form event end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @event.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for date start -->
   <div class="form-group">
     <label for="date">
       Date
     </label>
 
-    <!-- Input for date start -->
     <input type="text" id="date" name="date" class="form-control" value="<%= @event.date %>">
-    <!-- Input for date end -->
   </div>
-  <!-- Label and input for date end -->
 
-  <!-- Label and input for venue start -->
   <div class="form-group">
     <label for="venue">
       Venue
     </label>
 
-    <!-- Input for venue start -->
     <input type="text" id="venue" name="venue" class="form-control" value="<%= @event.venue %>">
-    <!-- Input for venue end -->
   </div>
-  <!-- Label and input for venue end -->
 
-  <!-- Label and input for description start -->
   <div class="form-group">
     <label for="description">
       Description
     </label>
 
-    <!-- Input for description start -->
     <input type="text" id="description" name="description" class="form-control" value="<%= @event.description %>">
-    <!-- Input for description end -->
   </div>
-  <!-- Label and input for description end -->
 
-  <!-- Label and input for member_id start -->
-  <!-- Label and input for member_id end -->
 
-  <!-- Label and input for genre_id start -->
   <div class="form-group">
     <label for="genre_id">
       Genre
     </label>
 
-    <!-- Input for genre_id start -->
     <%= select_tag(:genre_id, options_from_collection_for_select(Genre.all, :id, :name, @event.genre_id), :class => "form-control") %>
-    <!-- Input for genre_id end -->
   </div>
-  <!-- Label and input for genre_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update event

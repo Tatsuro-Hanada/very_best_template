@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link review start -->
       <div class="col">
         <% if current_member == @review.member %>
           <a href="/reviews/<%= @review.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link review end -->
 
-      <!-- Delete link review start -->
       <div class="col">
         <% if current_member == @review.member %>
           <a href="/delete_review/<%= @review.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,23 +26,19 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link review end -->
     </div>
 
     <dl>
       <dt>
         Body
       </dt>
-      <!-- Display body start -->
       <dd>
         <%= @review.body %>
       </dd>
-      <!-- Display body end -->
 
       <dt>
         Member
       </dt>
-      <!-- Display member_id start -->
       <dd>
         <% if @review.member.present? %>
           <a href="/members/<%= @review.member_id %>">
@@ -53,12 +46,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display member_id end -->
 
       <dt>
         Event
       </dt>
-      <!-- Display event_id start -->
       <dd>
         <% if @review.event.present? %>
           <a href="/events/<%= @review.event_id %>">
@@ -66,37 +57,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display event_id end -->
 
       <dt>
         Rating
       </dt>
-      <!-- Display rating start -->
       <dd>
         <%= @review.rating %>
       </dd>
-      <!-- Display rating end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@review.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@review.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

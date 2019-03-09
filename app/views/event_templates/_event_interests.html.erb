@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @event.interests.each do |interest| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/interests/<%= interest.id %>">
           <%= interest.member_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_member == interest.user %>
           <a href="/delete_interest_from_event/<%= interest.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="event_interests_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "event_templates/event_interests_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

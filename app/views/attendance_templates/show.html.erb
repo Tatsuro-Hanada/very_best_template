@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link attendance start -->
       <div class="col">
         <% if current_member == @attendance.member %>
           <a href="/attendances/<%= @attendance.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link attendance end -->
 
-      <!-- Delete link attendance start -->
       <div class="col">
         <% if current_member == @attendance.member %>
           <a href="/delete_attendance/<%= @attendance.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link attendance end -->
     </div>
 
     <dl>
       <dt>
         Member
       </dt>
-      <!-- Display member_id start -->
       <dd>
         <% if @attendance.member.present? %>
           <a href="/members/<%= @attendance.member_id %>">
@@ -44,12 +39,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display member_id end -->
 
       <dt>
         Event
       </dt>
-      <!-- Display event_id start -->
       <dd>
         <% if @attendance.event.present? %>
           <a href="/events/<%= @attendance.event_id %>">
@@ -57,28 +50,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display event_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@attendance.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@attendance.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

@@ -1,17 +1,8 @@
-<!-- Form attendance start -->
 <form action="/create_attendance_from_event" method="post">
-<!-- Form attendance end -->
 
-  <!-- Label and input for member_id start -->
-  <!-- Input for "member_id" start -->
   <input type="hidden" name="member_id" value="<%= current_member.id %>">
-  <!-- Input for "member_id" end -->
-  <!-- Label and input for member_id end -->
 
-  <!-- Label and input for event_id start -->
-  <!-- Input for event_id start -->
   <input type="hidden" name="event_id" value="<%= @event.id %>">
-  <!-- Input for event_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create attendance
